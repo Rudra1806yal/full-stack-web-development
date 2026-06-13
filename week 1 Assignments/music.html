@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Streamers</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f3f3f3;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    color:rgb(49, 5, 245);
+    margin-bottom:40px;
+}
+
+.features-container,
+.guests-container,
+.products-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+
+.feature{
+    width:200px;
+    text-align:center;
+}
+
+.icon{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:#111;
+    color:aqua;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+}
+
+.feature h3{
+    margin-top:20px;
+}
+
+.feature p{
+    margin-top:10px;
+    color:green;
+}
+
+
+.guests-title{
+    margin-top:80px;
+}
+
+.guest-card{
+    width:300px;
+    background-color: white;
+    text-align:center;
+    padding:25px;
+    box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.guest-card img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.guest-card h2{
+    margin:15px 0;
+}
+
+.guest-card p{
+    margin-bottom:15px;
+}
+
+.btn{
+    background:#7808b57b;
+    color:rgba(17, 1, 1, 0.901);
+    border:none;
+    padding:10px 25px;
+    cursor:pointer;
+}
+
+
+.products-title{
+    margin-top:80px;
+}
+
+.product{
+    width:250px;
+}
+
+.product img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.product h2{
+    margin-top:15px;
+}
+
+.product p{
+    margin-top:10px;
+}
+
+</style>
+</head>
+<body>
+
+
+<h1>Get ready for seamless online music</h1>
+
+<div class="features-container">
+
+    <div class="feature">
+        <div class="icon">⬇</div>
+        <h3>Offline mode</h3>
+        <p>Save and listen anywhere.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">🎵</div>
+        <h3>High quality audio</h3>
+        <p>Enjoy the full range of sound.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">🚫</div>
+        <h3>No ads</h3>
+        <p>Enjoy nonstop music.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">⏭</div>
+        <h3>Unlimited skips</h3>
+        <p>Just tap skip.</p>
+    </div>
+
+</div>
+
+
+<h1 class="guests-title">Featured Guests</h1>
+
+<div class="guests-container">
+
+    <div class="guest-card">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="">
+        <h2>Megan Smith</h2>
+        <p></p>
+        <button class="btn">Register</button>
+    </div>
+
+    <div class="guest-card">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500" alt="">
+        <h2>Brooke Kagle</h2>
+        <p></p>
+        <button class="btn">Register</button>
+    </div>
+
+    <div class="guest-card">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500" alt="">
+        <h2>Philip Martin</h2>
+        <p></p>
+        <button class="btn">Register</button>
+    </div>
+
+</div>
+
+
+<h1 class="products-title">BUY WHAT'S NEW</h1>
+
+<div class="products-container">
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=500" alt="">
+        <h2>Garage Band</h2>
+        <p>Radio Station</p>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=500" alt="">
+        <h2>Garage Band</h2>
+        <p>Radio Station</p>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=500" alt="">
+        <h2>Garage Band</h2>
+        <p>Radio Station</p>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=500" alt="">
+        <h2>Garage Band</h2>
+        <p>Radio Station</p>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=500" alt="">
+        <h2>Garage Band</h2>
+        <p>Radio Station</p>
+    </div>
+
+</div>
+
+</body>
+</html>
