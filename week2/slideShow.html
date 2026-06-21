@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+</head>
+<body>
+
+    <img id="slideshow" width="400" height="250" alt="Slideshow Image">
+
+    <br><br>
+
+    <button onclick="startSlideshow()">Start Slideshow</button>
+    <button onclick="stopSlideshow()">Stop Slideshow</button>
+
+    <br><br>
+
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
+    <script>
+        // 20 images
+        const images = [];
+
+        for (let i = 1; i <= 20; i++) {
+            images.push(`https://picsum.photos/400/250?random=${i}`);
+        }
+
+        let currentIndex = 0;
+        let slideshowInterval = null;
+
+        function showImage(index) {
+            document.getElementById("slideshow").src = images[index];
+        }
+
+        function startSlideshow() {
+            if (slideshowInterval !== null) return;
+
+            slideshowInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }, 2000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(slideshowInterval);
+            slideshowInterval = null;
+        }
+
+        function nextImage() {
+            stopSlideshow();
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            stopSlideshow();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Load first image
+        showImage(currentIndex);
+    </script>
+
+</body>
+</html>
