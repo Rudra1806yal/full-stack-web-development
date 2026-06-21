@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        h3 {
+            color: blue;
+            font-size: 35px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .calc {
+            width: 600px;
+            height: 550px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .input {
+            width: 450px;
+            height: 90px;
+            border: 1px solid black;
+            box-shadow: rgba(0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            margin: 15px auto;
+            border-radius: 12px;
+        }
+
+        .keyboard {
+            width: 450px;
+            height: 350px;
+            box-shadow: rgba(0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .keyboard>div {
+            box-shadow: rgba(0, 0, 0.35) 0px 5px 15px;
+            padding-top: 25px;
+            font-size: 20px;
+            font-weight: 900;
+            border-radius: 12px;
+        }
+
+        #operation {
+            background-color: black;
+            color: white;
+        }
+
+        #operation:hover {
+            cursor: pointer;
+            background-color: blue;
+        }
+
+        #clear {
+            background-color: red;
+            color: white;
+        }
+
+        #clear:hover {
+            cursor: pointer;
+            background-color: blue;
+        }
+
+
+        #number:hover {
+            cursor: pointer;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calc">
+        <h3>Welcome to My Calculator</h3>
+        <div class="input"></div>
+
+        <div class="keyboard">
+            <div id="number">1</div>
+            <div id="number">2</div>
+            <div id="number">3</div>
+            <div id="operation">+</div>
+
+            <div id="number">4</div>
+            <div id="number">5</div>
+            <div id="number">6</div>
+            <div id="operation">-</div>
+
+            <div id="number">7</div>
+            <div id="number">8</div>
+            <div id="number">9</div>
+            <div id="operation">*</div>
+
+            <div id="clear">C</div>
+            <div id="number">0</div>
+            <div id="operation">=</div>
+            <div id="operation">/</div>
+        </div>
+    </div>
+
+    <script>
+        let bag = ""
+
+        //step-1 select/catch element
+        const keys = document.querySelectorAll(".keyboard>div");
+        //console.log(key);
+
+        //step-2 attach event
+        for(let i=0; i<keys.length; i++){
+            //console.log(keys[i])
+            keys[i].addEventListener("click", myCal)
+        }
+
+        //step-3 handle events
+        function myCal(e){
+            let targetNumber = e.target.innerText
+            //console.log(targetNumber)
+
+            const display = document.querySelector(".input")
+            //display.innerText = targetNumber
+
+            if(targetNumber == "C"){
+                bag = ""
+                display.innerText = bag;
+            }else if(targetNumber == "="){
+                let ans = eval(bag)
+                display.innerText = ans;
+            }else{
+                bag += targetNumber;
+                display.innerText = bag;
+            }
+        }
+    </script>
+</body>
+
+</html>
